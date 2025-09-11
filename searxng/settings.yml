@@ -419,7 +419,7 @@ engines:
 
   - name: annas archive
     engine: annas_archive
-    disabled: true
+    disabled: false
     shortcut: aa
 
   - name: ansa
@@ -1188,6 +1188,7 @@ engines:
       - https://kat.am
     shortcut: kc
     timeout: 4.0
+    disabled: true
 
   - name: lemmy communities
     engine: lemmy
@@ -1385,7 +1386,7 @@ engines:
   - name: nyaa
     engine: nyaa
     shortcut: nt
-    disabled: true
+    disabled: false
 
   - name: mankier
     engine: json_engine
@@ -1776,7 +1777,7 @@ engines:
     engine: reddit
     shortcut: re
     page_size: 25
-    disabled: true
+    disabled: false
 
   - name: reuters
     engine: reuters
@@ -1981,7 +1982,7 @@ engines:
   - name: steam
     engine: steam
     shortcut: stm
-    disabled: true
+    disabled: false
 
   - name: tokyotoshokan
     engine: tokyotoshokan
@@ -1996,6 +1997,7 @@ engines:
     base_url:
       - https://solidtorrents.to
       - https://bitsearch.to
+    disabled: true
 
   # For this demo of the sqlite engine download:
   #   https://liste.mediathekview.de/filmliste-v2.db.bz2
@@ -2337,7 +2339,7 @@ engines:
   - name: 1337x
     engine: 1337x
     shortcut: 1337x
-    disabled: true
+    disabled: false
 
   - name: duden
     engine: duden
