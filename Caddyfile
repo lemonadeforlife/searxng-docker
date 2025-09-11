@@ -42,12 +42,12 @@ encode zstd gzip
 	path /stats/checker
 }
 
-@imageproxy {
-	path /image_proxy
-}
-
 @static {
 	path /static/*
+}
+
+@imageproxy {
+	path /image_proxy
 }
 
 header {
@@ -65,6 +65,11 @@ header {
 
 	# Comment header to allow indexing by search engines
 	X-Robots-Tag "noindex, nofollow, noarchive, nositelinkssearchbox, nosnippet, notranslate, noimageindex"
+    
+	# enable HSTS
+	# WARNING: Once this value is set, the site must continue to support HTTPS until the expiry time is reached.
+
+	# Strict-Transport-Security max-age=15768000;
 
 	# Remove "Server" header
 	-Server
@@ -77,9 +82,9 @@ header @api {
 
 route {
 	# Cache policy
-	header Cache-Control "max-age=0, public, must-revalidate"
-	header @imageproxy Cache-Control "max-age=3600, public"
-	header @static Cache-Control "max-age=31536000, public, immutable"
+	header Cache-Control "no-cache"
+	header @static Cache-Control "public, max-age=30, stale-while-revalidate=60"
+	header @imageproxy Cache-Control "public, max-age=3600"
 }
 
 # SearXNG
